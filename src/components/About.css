@@ -1,0 +1,106 @@
+.about-container {
+  padding: 4rem 2rem;
+  background-color: #0f0f17;
+  color: #ffffff;
+}
+
+.about-title h1 {
+  font-size: 3rem;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #3de8f6;
+  display: inline-block;
+}
+
+.about-sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 2rem;
+}
+
+.about-left {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.about-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Hides profie picture on mobile */
+@media (max-width: 768px) {
+  .about-left {
+    display: none;
+  }
+}
+
+.about-right {
+  flex: 1;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.about-para p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.education-section h3 {
+  font-size: 1.5rem;
+  color: #3de8f6;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.education-section p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.tech-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.language-icon img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.language-icon img:hover {
+    transform: scale(1.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-sections {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-right {
+    text-align: center;
+  }
+
+  .education-section h3,
+  .education-section p {
+    text-align: center;
+  }
+
+}
