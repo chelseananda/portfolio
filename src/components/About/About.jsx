@@ -1,5 +1,4 @@
 import './About.css';
-import about_profile from '../../assets/about_profile.png';
 import python from '../../assets/python.svg';
 import csharp from '../../assets/csharp.svg';
 import java from '../../assets/java.svg';
@@ -16,11 +15,6 @@ const About = () => {
         <img src={theme_pattern} alt="" className="theme-pattern" />
       </div>
       <div className="about-sections">
-        <div className="about-left">
-          <div className="profile-frame">
-            <img src={about_profile} alt="Chelsea Nanda" className="profile-image" />
-          </div>
-        </div>
         <div className="about-right">
           <div className="about-para">
             <p>

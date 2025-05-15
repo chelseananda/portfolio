@@ -1,18 +1,27 @@
 import { useState } from 'react';
 import './Navbar.css';
-import about_profile from '../../assets/about_profile.png';
+import logo from '../../assets/logo.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLogoClicked, setIsLogoClicked] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleLogoClick = () => {
+    setIsLogoClicked(true);
+    setTimeout(() => setIsLogoClicked(false), 300);
+  };
+
   return (
     <nav className="navbar">
-      <div className="nav-logo">
-        <img src={about_profile} alt="Chelsea Nanda" />
+      <div 
+        className={`nav-logo ${isLogoClicked ? 'clicked' : ''}`}
+        onClick={handleLogoClick}
+      >
+        <img src={logo} alt="Logo" />
       </div>
       <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
         <a href="#home" className="nav-link">Home</a>

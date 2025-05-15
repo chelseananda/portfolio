@@ -1,23 +1,10 @@
 import './Header.css';
-import about_profile from '../../assets/about_profile.png';
 
 const Header = () => {
   return (
     <header className="header" id="home">
-      <div className="logo-text">
-        <span className="logo-chelsea">Chelsea</span>
-        <span className="logo-n">N</span>
-      </div>
-      <div className="profile-container">
-        <div className="profile-background"></div>
-        <img
-          src={about_profile}
-          alt="Chelsea Nanda"
-          className="profile-image"
-        />
-      </div>
       <h1 className="animate-fade-in">
-        I'm <span>Chelsea Nanda</span>
+        I&apos;m <span>Chelsea Nanda</span>
         <br />
         Software Developer | Mobile & Full-Stack
       </h1>
