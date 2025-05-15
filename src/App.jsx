@@ -1,36 +1,23 @@
 // src/App.jsx
 
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Projects from './components/Projects';
-import About from './components/About'; // Import About component
-import './index.css';
-import Footer from './components/Footer';
-import Experience from './components/Experience';
+import Navbar from "./components/Navbar/Navbar";
+import Header from "./components/Header/Header";
+import About from "./components/About/About";
+import Projects from "./components/Projects/Projects";
+import Footer from "./components/Footer/Footer";
+import Experience from "./components/Experience/Experience";
 
-
-function App() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-      easing: 'ease-in-out',
-    });
-  }, []);
-
+const App = () => {
   return (
-    <div className="app">
+    <div>
       <Navbar />
-      <Hero />
+      <Header />
       <About />
-      <Experience/>
+      <Experience />
       <Projects />
       <Footer />
     </div>
   );
-}
+};
 
 export default App;

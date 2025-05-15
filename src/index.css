@@ -1,116 +1,11 @@
-/* 👇 Tailwind base layers */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Your custom variables and styles */
-
-:root {
-  --bg-color: #0a0a0a;
-  --primary-accent: #00d1b2;
-  --secondary-accent: #ffffff;
-  --text-light: #eaeaea;
-  --text-muted: #a1a1a1;
-  --card-bg: #1c1c1c;
-  --card-shadow: rgba(0, 0, 0, 0.5);
-  --btn-hover: #00b3a4;
-}
-
-body {
+* {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-light);
-  scroll-behavior: smooth;
-}
-
-section {
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  color: var(--primary-accent);
-  margin-bottom: 2rem;
-}
-
-/* Projects.css */
-
-.projects-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 2.5rem;
-}
-
-.project-card {
-  background: var(--card-bg);
-  border-radius: 15px;
-  box-shadow: 0 15px 30px var(--card-shadow);
-  overflow: hidden;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 25px 40px var(--card-shadow);
-}
-
-.project-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  filter: brightness(0.9);
-  transition: filter 0.3s ease;
-}
-
-.project-card:hover img {
-  filter: brightness(1);
-}
-
-.project-info {
-  padding: 1.5rem;
-}
-
-.project-info h3 {
-  font-size: 1.6rem;
-  color: var(--primary-accent);
-  margin-bottom: 0.8rem;
-}
-
-.project-info p {
-  color: var(--text-muted);
-  font-size: 1rem;
-  margin-bottom: 1.2rem;
-}
-
-.project-btn {
-  background: var(--primary-accent);
-  color: var(--bg-color);
-  padding: 0.75rem 1.5rem;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s ease;
-}
-
-.project-btn:hover {
-  background: var(--btn-hover);
-  color: #fff;
-}
-
-@media (max-width: 600px) {
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .project-info h3 {
-    font-size: 1.4rem;
-  }
-
-  .project-info p {
-    font-size: 0.95rem;
-  }
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -118,5 +13,31 @@ html {
 }
 
 body {
-  overflow-x: hidden;
+  min-height: 100vh;
+  background: #ffffff;
+  color: #1e293b;
+  font-family: "Outfit", sans-serif;
+  line-height: 1.5;
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.2);
+  color: #2563eb;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2563eb;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1d4ed8;
 }
