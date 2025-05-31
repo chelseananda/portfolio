@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://chelseananda.com/sitemap.xml
