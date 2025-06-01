@@ -32,11 +32,15 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          NODE_ENV: production
 
-      - name: Copy CNAME and 404
+      - name: Copy static files
         run: |
           cp public/CNAME dist/
           cp public/404.html dist/
+          cp public/robots.txt dist/
+          cp public/sitemap.xml dist/
           touch dist/.nojekyll
 
       - name: Setup Pages
