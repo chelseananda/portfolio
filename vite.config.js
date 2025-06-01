@@ -10,6 +10,7 @@ export default defineConfig({
       closeBundle() {
         fs.copyFileSync('public/CNAME', 'dist/CNAME');
         fs.copyFileSync('public/404.html', 'dist/404.html');
+        fs.writeFileSync('dist/.nojekyll', '');
       }
     }
   ],
@@ -22,8 +23,8 @@ export default defineConfig({
     assetsDir: 'assets',
     rollupOptions: {
       output: {
-        entryFileNames: 'assets/[name].[hash].mjs',
-        chunkFileNames: 'assets/[name].[hash].mjs',
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
         assetFileNames: 'assets/[name].[hash].[ext]'
       }
     }
