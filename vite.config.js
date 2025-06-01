@@ -12,8 +12,13 @@ export default defineConfig({
       }
     }
   ],
-  base: '/',
+  base: './',
   build: {
     outDir: 'dist',
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
   }
 })
