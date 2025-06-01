@@ -13,15 +13,18 @@ export default defineConfig({
       }
     }
   ],
-  base: '',
+  base: './',
   build: {
     outDir: 'dist',
     emptyOutDir: true,
     minify: 'terser',
     sourcemap: false,
+    assetsDir: 'assets',
     rollupOptions: {
       output: {
-        manualChunks: undefined
+        entryFileNames: 'assets/[name].[hash].mjs',
+        chunkFileNames: 'assets/[name].[hash].mjs',
+        assetFileNames: 'assets/[name].[hash].[ext]'
       }
     }
   }
