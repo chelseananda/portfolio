@@ -10,9 +10,20 @@ export default defineConfig({
       closeBundle() {
         fs.copyFileSync('public/CNAME', 'dist/CNAME')
       }
+    },
+    {
+      name: 'configure-response-headers',
+      configureServer: ({ middlewares }) => {
+        middlewares.use((req, res, next) => {
+          if (req.url.endsWith('.js')) {
+            res.setHeader('Content-Type', 'application/javascript');
+          }
+          next();
+        });
+      }
     }
   ],
-  base: 'https://nandachelsea.com/',
+  base: '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
@@ -21,10 +32,9 @@ export default defineConfig({
     sourcemap: false,
     rollupOptions: {
       output: {
-        manualChunks: undefined,
-        entryFileNames: 'assets/[name].[hash].js',
-        chunkFileNames: 'assets/[name].[hash].js',
-        assetFileNames: 'assets/[name].[hash].[ext]'
+        entryFileNames: `assets/[name].[hash].js`,
+        chunkFileNames: `assets/[name].[hash].js`,
+        assetFileNames: `assets/[name].[hash].[ext]`
       }
     }
   }
