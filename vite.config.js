@@ -2,7 +2,6 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import fs from 'fs'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
@@ -13,13 +12,16 @@ export default defineConfig({
       }
     }
   ],
-  base: './',
+  base: 'https://nandachelsea.com/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
     emptyOutDir: true,
+    minify: 'terser',
+    sourcemap: false,
     rollupOptions: {
       output: {
+        manualChunks: undefined,
         entryFileNames: 'assets/[name].[hash].js',
         chunkFileNames: 'assets/[name].[hash].js',
         assetFileNames: 'assets/[name].[hash].[ext]'
