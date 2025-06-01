@@ -6,35 +6,22 @@ export default defineConfig({
   plugins: [
     react(),
     {
-      name: 'copy-cname',
+      name: 'copy-files',
       closeBundle() {
-        fs.copyFileSync('public/CNAME', 'dist/CNAME')
-      }
-    },
-    {
-      name: 'configure-response-headers',
-      configureServer: ({ middlewares }) => {
-        middlewares.use((req, res, next) => {
-          if (req.url.endsWith('.js')) {
-            res.setHeader('Content-Type', 'application/javascript');
-          }
-          next();
-        });
+        fs.copyFileSync('public/CNAME', 'dist/CNAME');
+        fs.copyFileSync('public/404.html', 'dist/404.html');
       }
     }
   ],
-  base: '/',
+  base: '',
   build: {
     outDir: 'dist',
-    assetsDir: 'assets',
     emptyOutDir: true,
     minify: 'terser',
     sourcemap: false,
     rollupOptions: {
       output: {
-        entryFileNames: `assets/[name].[hash].js`,
-        chunkFileNames: `assets/[name].[hash].js`,
-        assetFileNames: `assets/[name].[hash].[ext]`
+        manualChunks: undefined
       }
     }
   }
